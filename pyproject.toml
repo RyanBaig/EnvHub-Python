@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "envhub"
+version = "1.0.0"
+description = "EnvHub Python SDK (envhub.ryanbaig.vercel.app)"
+authors = ["RyanBaig <rg5373429@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
