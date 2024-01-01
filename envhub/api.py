@@ -7,12 +7,12 @@ Functions:
 import requests
 from requests.exceptions import ConnectionError
 
-def get_var(name):
+def get_var(name: str) -> str:
     """
     Retrieves the value of a variable from the EnvHub API.
 
     Parameters:
-        name (str): The name of the variable to retrieve.
+        name (str): The name of the variable to retrieve. 
 
     Returns:
         str: The value of the variable.
@@ -20,7 +20,7 @@ def get_var(name):
     Raises:
         ConnectionError: If the API request fails or returns an error.
     """
-    r = requests.get('https://envhub.ryanbaig.vercel.app/api/vars?varName=' + name)
+    r = requests.get('https://envhub.ryanbaig.vercel.app/api/vars/get?varName=' + name)
     if r.status_code == 200:
         return r.json()["value"]
     else:
