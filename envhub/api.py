@@ -24,7 +24,7 @@ def get_var(name: str) -> str:
     if r.status_code == 200:
         return r.json()["value"]
     else:
-        raise ConnectionError(r.json())
+        raise ConnectionError("An error occured with the API. Status Code: " + r.status_code + " Message: " + r.text)
 
 def set_var(name: str, value: str) -> str:
     """
