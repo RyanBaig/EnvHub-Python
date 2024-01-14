@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='EnvHub',
-    version='1.2',
+    version='1.3',
     packages=find_packages(),
     author="RyanBaig",
     long_description="""
