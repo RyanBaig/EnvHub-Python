@@ -21,7 +21,7 @@ def get_var(name: str) -> str:
     Raises:
         ConnectionError: If the API request fails or returns an error.
     """
-    r = requests.get('https://envhub.rb-projects.vercel.app/api/vars/get?varName=' + name)
+    r = requests.get('https://env-hub.vercel.app/api/vars/get?varName=' + name)
     if r.status_code == 200:
         return r.json()["value"]
     else:
@@ -49,7 +49,7 @@ def set_var(name: str, value: str) -> str:
     }
 
     
-    r = requests.post('https://envhub.rb-projects.vercel.app/api/vars/set', json=body)
+    r = requests.post('https://env-hub.vercel.app/api/vars/set', json=body)
     if r.status_code == 200 and r.json()["statusCode"] == 200:
         # I should return what in this scenario? ans: the new value
         return r.json()
